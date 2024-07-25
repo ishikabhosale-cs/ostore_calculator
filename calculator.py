@@ -22,12 +22,15 @@ def calculate_ostore_capacity(servers_per_rack, drives_per_server, drive_capacit
         }
 
     no_of_diskset = total_drives / stripe_size
+    server_failure_tolerance = 0 
 
     if servers_per_rack % stripe_size == 0:
         node_set = servers_per_rack / stripe_size 
         server_failure_tolerance = parity_shards * node_set
-    elif servers_per_rack % 3 == 0 and drives_per_server % stripe_size == 0:
-        server_failure_tolerance = servers_per_rack / 3 
+    elif stripe_size == 6 and servers_per_rack % 3 == 0 and drives_per_server % 2 == 0: 
+            server_failure_tolerance = servers_per_rack / 3 
+    elif stripe_size == 9 and servers_per_rack % 3 == 0 and drives_per_server % 3 == 0:
+            server_failure_tolerance = servers_per_rack / 3 
     else: 
         no_of_nodes_per_disket = servers_per_rack / no_of_diskset
         no_of_drives_per_server_per_diskset  = stripe_size / no_of_nodes_per_disket
