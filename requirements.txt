@@ -6,7 +6,7 @@ Cython==3.0.10
 dbus-python==1.2.4
 decorator==4.2.1
 google-auth==2.22.0
-gpg==1.7.2b7
+gpg==1.13.1
 idna==2.5
 kubernetes==29.0.0
 libcomps==0.1.18
@@ -17,7 +17,7 @@ perf==0.1
 pyasn1==0.5.1
 pyasn1-modules==0.3.0
 pycairo==1.16.3
-pygobject==3.28.3
+PyGObject==3.28.3
 PySocks==1.6.8
 python-dateutil==2.6.1
 python-linux-procfs==0.7.0
