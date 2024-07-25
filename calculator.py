@@ -89,8 +89,8 @@ def main():
     st.title("Ostore Erasure Code Calculator")
 
     # Input fields
-    servers_per_rack = st.number_input("Number of Servers", min_value=1, value=4)
-    drives_per_server = st.number_input("Number of Drives per Server", min_value=1, value=8)
+    servers_per_rack = st.number_input("Number of Servers", min_value=1, value=3)
+    drives_per_server = st.number_input("Number of Drives per Server", min_value=1, value=6)
     drive_capacity = st.number_input("Drive Capacity (TiB)", min_value=1.0, value=12.0, step=0.01)
 
     total_drives = servers_per_rack * drives_per_server
